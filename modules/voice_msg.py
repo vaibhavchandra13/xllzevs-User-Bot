@@ -7,10 +7,10 @@ from gtts import gTTS
 class Info:
 	short_desc = "[Развлекательный] Преобразовывает текст в голосовое сообщение."
 	desc = "Модуль для преобразования текста в голосовое сообщение."
-	commands = {".voice [text]"}
+	commands = {"voice [text]"}
 	author = "@xllzevs"
 
-@Client.on_message(filters.me & filters.command('voice', '.'))
+@Client.on_message(filters.me & filters.command('voice', prefix))
 async def voice(app, msg):
 	try:
 		await msg.delete()
