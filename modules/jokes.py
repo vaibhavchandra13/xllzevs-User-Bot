@@ -2,13 +2,12 @@ from pyrogram import Client, filters
 import requests
 from bs4 import BeautifulSoup
 
-import re
 
 class Info:
     desc = "Поиск анекдотов в интернете."
     short_desc = "[Развлекательный] Парсит анекдоты: .joke"
     author = "@AIDS_company (переделал: @youngtitanium)"
-    commands = {".joke": "Парсит анекдоты."}
+    commands = {"joke": "Парсит анекдоты."}
     version = 2.0
     
 class storage:
@@ -31,7 +30,7 @@ def parse():
         # Записываем все анекдоты
         storage.jokes.append(i.text)
 
-@Client.on_message(filters.me & filters.regex('^анекдот',re.I))
+@Client.on_message(filters.me & filters.command('joke', prefix))
 async def get_joke(_, msg): 
     if len(storage.jokes) < 1:
         await msg.edit("Парсим анекдоты...")
