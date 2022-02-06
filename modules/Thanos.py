@@ -8,7 +8,6 @@ from time import sleep
 
 import random
 
-import re
 
 class Info:
     short_desc = "[Развлекательный] Щелчок Таноса."
@@ -17,7 +16,7 @@ class Info:
     author = "@xllzevs"
     commands = {"щелчок": "Щелчок Таноса."}
 
-@Client.on_message(filters.regex('^щелчок',re.I) & filters.me)
+@Client.on_message(filters.command('щелчок', prefix) & filters.me)
 def thanos(_, msg):
     chat = msg.text.split(".thanos ", maxsplit=1)[1]
  
