@@ -94,12 +94,12 @@ __module_info__ = {
 }
 
 class Info:
-    short_desc = '[Развлекательный] .sq, .msq, .rsq'
+    short_desc = '[Развлекательный] sq, msq, rsq'
     commands = {
-        '.sq': "Делает цитату. Принимает отвечаемое сообщение.",
-        '.msq': 'Делает цитату из указанного количества сообщений перед отвечаемого сообщения (включая его). '
+        'sq': "Делает цитату. Принимает отвечаемое сообщение.",
+        'msq': 'Делает цитату из указанного количества сообщений перед отвечаемого сообщения (включая его). '
                 'Принимает отвечаемое сообщение и количество сообщений (1 по умолчанию).',
-        '.rsq': 'Делает цитату из ветки отвеченных сообщений. Длину ветки определяет указанное число. '
+        'rsq': 'Делает цитату из ветки отвеченных сообщений. Длину ветки определяет указанное число. '
                 'Принимает отвечаемое сообщение и количество сообщений (1 по умолчанию).',
     }
     version = 1.1
@@ -115,7 +115,7 @@ if 'get_string' not in globals():
 API_ENDPOINT = "https://quotes.fl1yd.su/generate"
 
 
-@Client.on_message(filters.command('sq', '.') & filters.me)
+@Client.on_message(filters.command('sq', prefix) & filters.me)
 async def sqcmd(app, message: Message):
     args = message.command[1:]
     if '!file' in args:
@@ -180,7 +180,7 @@ async def sqcmd(app, message: Message):
 
 
 
-@Client.on_message(filters.me & (filters.command('rsq', '.')))
+@Client.on_message(filters.me & (filters.command('rsq', prefix)))
 async def rsqcmd(app, message: Message):
     args = message.command[1:]
     if '!file' in args:
@@ -252,7 +252,7 @@ async def rsqcmd(app, message: Message):
 
 
 
-@Client.on_message(filters.me & filters.command('msq', '.'))
+@Client.on_message(filters.me & filters.command('msq', prefix))
 async def msqcmd(app, message: Message):
     args = message.command[1:]
     if '!file' in args:
