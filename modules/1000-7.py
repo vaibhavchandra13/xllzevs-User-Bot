@@ -23,7 +23,7 @@ def prettify(val: int) -> str:
     return "".join(digits[i] for i in str(val))
 
 
-@Client.on_message(filters.command("1000", ".") & filters.me)
+@Client.on_message(filters.command("1000", prefix) & filters.me)
 async def ghoul_counter(c: Client, m: Message):
     await m.delete()
     counter = 1000
