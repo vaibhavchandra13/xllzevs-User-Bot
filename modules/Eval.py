@@ -15,7 +15,7 @@ class Info:
     short_desc = desc = "[Инструменты] Выполнение Python кода."
     version = 4.4
     author = "Кобан + @youngtitanium"
-    commands = {".e [code]": "Выполнение code."}
+    commands = {"e [code]": "Выполнение code."}
 
 __storage__ = {
 	"results": {}
