@@ -8,12 +8,12 @@ class Info:
 	desc = "Постоянная отправка сообщений в указанном кол-ве."
 	short_desc = "[Разное] Постоянная отправка сообщений."
 	cmd_list = {
-		".автореп [интервал] [кол-во] [текст]" : "спам сбщ реплаем(удаляются).",
-		".авто [интервал] [кол-во] [текст]" : "спам обычными сбщ(удаляются).",
+		"автореп [интервал] [кол-во] [текст]" : "спам сбщ реплаем(удаляются).",
+		"авто [интервал] [кол-во] [текст]" : "спам обычными сбщ(удаляются).",
 	}
 	ver = 2.1
 
-@Client.on_message(filters.me & filters.command("автореп", "."))
+@Client.on_message(filters.me & filters.command("автореп", prefix))
 async def _(app, message):
 	try:
 		timer = message.text.split(" ", 3)[1]
@@ -94,7 +94,7 @@ async def _(app, message):
 
 
 
-@Client.on_message(filters.me & filters.command("авто", "."))
+@Client.on_message(filters.me & filters.command("авто", prefix))
 async def hacker(app, message):
 	try:
 		interval, count, message_text = message.text.split(" ", 3)[1:]
