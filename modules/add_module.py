@@ -5,12 +5,12 @@ class Info:
 	desc = ("Модуль для создания файлов с расширением .py")
 	version = "1.3"
 	commands = {
-		".add": "Название файла."
+		"add": "Название файла."
 		}
 	author = "Неизвестно."
 
 
-@app.on_message(filters.me & filters.command("add", "."))
+@app.on_message(filters.me & filters.command("add", prefix))
 def module_adder(app, msg):
 	try:
 		name = msg.text.split(" ", 1)[1]
