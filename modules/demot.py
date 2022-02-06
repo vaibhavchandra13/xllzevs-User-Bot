@@ -59,13 +59,13 @@ class Info:
     version = 1.0
     author = "@pelmeshke"
     commands = {
-       ".demot": "Генерировать демотиватор.",
-       ".slavik": "Генерировать Славик мем."
+       "demot": "Генерировать демотиватор.",
+       "slavik": "Генерировать Славик мем."
     }
     
 
 
-@Client.on_message(filters.me & filters.reply & filters.command('demot', '.'))
+@Client.on_message(filters.me & filters.reply & filters.command('demot', prefix))
 async def demotivator_handler(app, message):
     photo = message.reply_to_message.photo or \
             message.reply_to_message.sticker or \
@@ -105,7 +105,7 @@ async def demotivator_handler(app, message):
     await message.delete()
     os.remove(photo_path)
 
-@Client.on_message(filters.me & filters.reply & filters.command('slavik', '.'))
+@Client.on_message(filters.me & filters.reply & filters.command('slavik', prefix))
 async def slavik_handler(peluserbot, message):
     photo = message.reply_to_message.photo or \
             message.reply_to_message.sticker or \
