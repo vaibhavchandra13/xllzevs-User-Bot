@@ -5,13 +5,13 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 class Info:
-    short_desc = "[Инструменты] Список всех участников чата отсортированные по дате вступления."
+    short_desc = "[Инструменты] Список всех участников чата отсортированные по дате вступления" # он вроде не работает, если сможете починить его то если не сложно скиньть мне в тг
     desc = "Модуль для получиния списка всех участников чата отсортированных по дате вступления в группу."
     version = 1.0
     author = "@xllzevs"
 
 
-@Client.on_message(filters.command("joindate" "") & filters.me)
+@Client.on_message(filters.command("joindate" prefix) & filters.me)
 def join_date(app, message: Message):
     members = []
     for m in app.iter_chat_members(message.chat.id):
