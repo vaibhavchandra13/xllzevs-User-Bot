@@ -3,10 +3,10 @@ from pyrogram import filters, Client as app
 class Info:
   short_desc = "[Инструменты] Калькулятор."
   desc = "Обчный колькулятор для решение примеров на умножение|деление|плюс|минус."
-  commands = {".calc [пример]"}
+  commands = {"calc [пример]"}
   author = "@xllzevs"
   
-@app.on_message(filters.me & filters.command("calc", "."))
+@app.on_message(filters.me & filters.command("calc", prefix))
 def calculator(_, message):
   reply = message.reply_to_message
   if reply is None:
