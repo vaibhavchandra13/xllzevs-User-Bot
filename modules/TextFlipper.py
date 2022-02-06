@@ -5,7 +5,7 @@ class Info:
     short_desc = "[Развлекательный] Переворачивает текст после команды вверх ногами."
     desc = "Переворачивает текст после команды вверх ногами."
     version = 0.7
-    commands = {".flip [text(только на англ)]": "Переворачивает текст вверх ногами."}
+    commands = {"flip [text(только на англ)]": "Переворачивает текст вверх ногами."}
     author = "@xllzevs"
 
 
@@ -91,7 +91,7 @@ REPLACEMENT_MAP = {
 }
 
 
-@Client.on_message(filters.command("flip", prefixes=".") & filters.me)
+@Client.on_message(filters.command("flip", prefix) & filters.me)
 async def flip(_, message):
     if len(message.text.split()) < 2:
         await message.edit("Вы не ввели текст")
