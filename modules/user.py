@@ -9,9 +9,9 @@ class Info:
 	desc = "Модуль для отображения онформации о человеке."
 	version = 1.4
 	author = "@xllzevs"
-	commands = {".user|.perm": "показывает информацию о человеке."}
+	commands = {"user|perm": "показывает информацию о человеке."}
 
-@Client.on_message(filters.command("user", ".") & filters.me)
+@Client.on_message(filters.command("user", prefix) & filters.me)
 async def get_user_info(client: Client, message: Message):
     if len(message.text.split()) >= 2:
         try:
@@ -42,7 +42,7 @@ Id: <code>{user_info.id}</code>
     await message.edit(user_info)
 
 
-@Client.on_message(filters.command("perm", ".") & filters.me)
+@Client.on_message(filters.command("perm", prefix) & filters.me)
 async def get_full_user_info(client: Client, message: Message):
     await message.edit("<code>Получение информации...</code>")
     if len(message.text.split()) >= 2:
