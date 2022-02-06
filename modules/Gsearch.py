@@ -11,9 +11,9 @@ class Info:
 	commands = {".google|.гугл|.поиск [запрос]"}
 	author = "@youngtitanium"
 
-@app.on_message(filters.me & filters.command("поиск", "."), group=666)
-@app.on_message(filters.me & filters.command("гугл", "."), group=667)
-@app.on_message(filters.me & filters.command("google", "."), group=668)
+@app.on_message(filters.me & filters.command("поиск", prefix), group=666)
+@app.on_message(filters.me & filters.command("гугл", prefix), group=667)
+@app.on_message(filters.me & filters.command("google", prefix), group=668)
 async def search(_, message):
 	text = message.text or message.caption
 	if len(text.split()) < 2:
