@@ -11,7 +11,7 @@ class Info:
     author = "@xllzevs"
 
 
-@Client.on_message(filters.command("joindate" prefix) & filters.me)
+@Client.on_message(filters.command("joindate", prefix) & filters.me)
 def join_date(app, message: Message):
     members = []
     for m in app.iter_chat_members(message.chat.id):
