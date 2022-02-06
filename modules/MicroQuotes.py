@@ -7,9 +7,9 @@ import textwrap
 
 class Info:
     short_desc = desc = "[Развлекательный] Генерировать цитату."
-    commands = {".qu": desc}
+    commands = {"qu": desc}
 
-@Client.on_message(filters.me & filters.command('qu', '.'))
+@Client.on_message(filters.me & filters.command('qu', prefix))
 async def mqcmd(peluserbot, message):
     """.mq <реплай на текст>"""
     bw = False if message.text.split()[1:] else True
