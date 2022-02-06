@@ -8,7 +8,7 @@ class Info:
     commands = {"setprefix": "Устанавливает кастомный префикс."}
 
 @Client.on_message(
-    filters.command(["setprefix"], ".") & filters.me
+    filters.command(["setprefix"], prefix) & filters.me
 )
 async def pref(client: Client, message: Message):
     if len(message.command) > 1:
