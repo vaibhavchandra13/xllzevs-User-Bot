@@ -5,7 +5,7 @@ class Info:
     short_desc = "[Разное] Держать в онлайне."
     desc = "Модуль который держит вас в онлайне."
     version = 2.0
-    commands = {".online": "Включить модуль."}
+    commands = {"online": "Включить модуль."}
 
 on = True
 
@@ -15,7 +15,7 @@ async def online(app, _):
         await app.send(UpdateStatus(offline=False))
     raise ContinuePropagation
 
-@Client.on_message(filters.me & filters.command("online", "."))
+@Client.on_message(filters.me & filters.command("online", prefix))
 async def switch(_, msg):
     global on
     if on:
