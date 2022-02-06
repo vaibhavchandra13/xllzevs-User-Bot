@@ -7,9 +7,6 @@ from time import sleep
 import random
 
 
-import re
-
-
 class Info:
     short_desc = "[Развлекательный] Взлом аккаунта."
     desc = "Взлом аккаунта."
