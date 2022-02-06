@@ -10,10 +10,10 @@ from pyrogram.types import Message
 class Info:
     short_desc = "[Инструменты] Получить список административных и собственных чатов."
     desc = "Модуль для вывода списка административных и собственных чатов."
-    commands = {".admlist": "Выводит административные и собственные чаты."}
+    commands = {"admlist": "Выводит административные и собственные чаты."}
     author = "Неизвестно(переделал @xllzevs)"
 
-@Client.on_message(filters.command("admlist", ".") & filters.me)
+@Client.on_message(filters.command("admlist", prefix) & filters.me)
 async def ownlist(client: Client, message: Message):
     tstart = perf_counter()
     await message.edit("<code>Извлечение информации... (это займет некоторое время)</code>")
