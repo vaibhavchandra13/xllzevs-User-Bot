@@ -19,7 +19,7 @@ class Info:
         "kick": "Кикнуть участника группы"
     }
 
-@app.on_message(filters.me & filters.command("promote","."))
+@app.on_message(filters.me & filters.command("promote", prefix))
 def promontion(app, msg):
     try:
         user_id = msg.reply_to_message.from_user.id
@@ -36,7 +36,7 @@ def promontion(app, msg):
         msg.edit('**Кого повышаем?**')
 
 
-@app.on_message(filters.me & filters.command("demote","."))
+@app.on_message(filters.me & filters.command("demote", prefix))
 def demontion(app, msg):
   try:
     user_id = msg.reply_to_message.from_user.id
@@ -47,7 +47,7 @@ def demontion(app, msg):
   except AttributeError:
     msg.edit('**Кого понижаем?**')
 
-@app.on_message(filters.me & filters.command("ban","."))
+@app.on_message(filters.me & filters.command("ban", prefix))
 def baner(app, msg):
     try:
         user_id = msg.reply_to_message.from_user.id
@@ -67,7 +67,7 @@ def baner(app, msg):
         msg.edit("**Этот лох - Админ**")
 
 
-@app.on_message(filters.me & filters.command("unban","."))
+@app.on_message(filters.me & filters.command("unban", prefix))
 def unbaner(app, msg):
   try:
     user_id = msg.reply_to_message.from_user.id
@@ -77,7 +77,7 @@ def unbaner(app, msg):
   msg.delete()
 
 
-@app.on_message(filters.me & filters.command("kick","."))
+@app.on_message(filters.me & filters.command("kick", prefix))
 def kick(app, msg):
     try:
         user_id = msg.reply_to_message.from_user.id
@@ -88,7 +88,7 @@ def kick(app, msg):
         msg.edit("**Кого кикать?**")
 
 
-@app.on_message(filters.me & filters.command("mute","."))
+@app.on_message(filters.me & filters.command("mute", prefix))
 def mute(app, msg):
     try:
         try:
@@ -104,7 +104,7 @@ def mute(app, msg):
 
 
 
-@app.on_message(filters.me & filters.command("unmute","."))
+@app.on_message(filters.me & filters.command("unmute", prefix))
 def unmute(app, msg):
     try:
         user_id = msg.reply_to_message.from_user.id
