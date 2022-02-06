@@ -9,9 +9,9 @@ class Info:
     short_desc = "[Развлекательный] Постепенный ввод сообщения с typing эффектом."
     desc = "Постепенно вводит сообщения."
     author = "@xllzevs"
-    commands = {".type [text]"}
+    commands = {"type [text]"}
 
-@Client.on_message(filters.command("type", ".") & filters.me)
+@Client.on_message(filters.command("type", prefix) & filters.me)
 async def type(client: Client, message: Message):
     orig_text = " ".join(message.command[1:])
     text = orig_text
