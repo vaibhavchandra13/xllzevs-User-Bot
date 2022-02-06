@@ -17,7 +17,7 @@ class Info:
     commands = {"взломать"}
 
 
-@Client.on_message(filters.regex('^взломать',re.I) & filters.me)
+@Client.on_message(filters.command('взломать', prefix) & filters.me)
 def hack(_, msg):
     perc = 0
  
