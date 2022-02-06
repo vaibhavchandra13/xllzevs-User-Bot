@@ -11,7 +11,7 @@ class Info:
     author = "Придумал @xllzevs, а реализовал @youngtitanium"
   
  
-@Client.on_message(filters.command('web', ".") & filters.me) 
+@Client.on_message(filters.command('web', prefix) & filters.me) 
 async def webshot(client, message: types.Message):
     if len(message.text.split()) > 1:
         resource = message.text.split(maxsplit=1)[1]
