@@ -4,10 +4,10 @@ import pyrogram
 class Info:
 	short_desc = "[Инструменты] Добавить челика в чат."
 	desc = "Модуль для добавления человека в чат."
-	commands = {".invite id|номер человека": "Добавляет человека в чат."}
+	commands = {"invite id|номер человека": "Добавляет человека в чат."}
 	author = "@xllzevs"
 
-@app.on_message(filters.me & filters.command("invite",".") & ~filters.private)
+@app.on_message(filters.me & filters.command("invite", prefix) & ~filters.private)
 def invite_users(app, msg):
 	chat_id = msg.chat.id
 	reply = msg.reply_to_message
