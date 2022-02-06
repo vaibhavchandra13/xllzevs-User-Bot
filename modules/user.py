@@ -8,7 +8,7 @@ class Info:
 	short_desc = "[Инструменты] Показывает информацию о человеке."
 	desc = "Модуль для отображения онформации о человеке."
 	version = 1.4
-	author = "@xllzevs"
+	author = "https://t.me/Dragon_Userbot(перевел @xllzevs)"
 	commands = {"user|perm": "показывает информацию о человеке."}
 
 @Client.on_message(filters.command("user", prefix) & filters.me)
